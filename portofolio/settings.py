@@ -167,15 +167,16 @@ STATIC_URL = '/static/'
 STATIC_FILES_DIRS =[os.path.join(BASE_DIR, 'static'),]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 '''
-'''
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-'''
+
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+'''
 AWS_REGION = 'eu-central-1'
 S3_USE_SIGV4 = True
 AWS_S3_HOST = "s3.eu-central-1.amazonaws"
@@ -200,9 +201,9 @@ MEDIA_URL = 'https://s3.%s.amazonaws.com/%s/media/' % (AWS_REGION, AWS_STORAGE_B
 MEDIA = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
 
-MAILCHIMP_API_KEY = config('MAILCHIMP_API_KEY')
-MAILCHIMP_SUBSCRIBE_LIST_ID = config('MAILCHIMP_SUBSCRIBE_LIST_ID')
-
+# MAILCHIMP_API_KEY = config('MAILCHIMP_API_KEY')
+# MAILCHIMP_SUBSCRIBE_LIST_ID = config('MAILCHIMP_SUBSCRIBE_LIST_ID')
+'''
 # max file size
 MAX_FILE_SIZE = 2*1024*1024
 
@@ -215,6 +216,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'height': 600,
 }
 
+'''
 SENDGRID_API_KEY = config('SENDGRID_API_KEY')
 
 EMAIL_HOST = 'smtp.sendgrid.net'
@@ -222,6 +224,7 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+'''
 
 
 ADMINS = [('christos', 'christosstath10@gmail.com')]
