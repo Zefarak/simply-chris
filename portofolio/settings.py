@@ -29,7 +29,7 @@ CACHES = {
 }
 '''
 
-ALLOWED_HOSTS = ['*', ]
+ALLOWED_HOSTS = ['localhost', '178.62.67.58' ]
 # Application definition
 
 INSTALLED_APPS = [
