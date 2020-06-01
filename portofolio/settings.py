@@ -9,11 +9,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '2n&-eic813_imd6k5a=0m1ir9ps=+686ass+ak5ej-1_0+)6mw'
 DEBUG = True
 
-if not DEBUG:
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    SECURE_SSL_REDIRECT = True
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 '''
@@ -29,7 +29,7 @@ CACHES = {
 }
 '''
 
-ALLOWED_HOSTS = ['localhost', '178.62.67.58' ]
+ALLOWED_HOSTS = ['simply-chris.com',  ]
 # Application definition
 
 INSTALLED_APPS = [
@@ -114,13 +114,15 @@ DATABASES = {
 '''
 
 
+
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'mydatabase',
         'USER': 'rootuser',
-        'PASSWORD': 'jgfkgjrtrw12321475jdikfos',
-        'HOST':'localhost',
+        'PASSWORD': 'asopos10',
+        'HOST':'161.35.202.137',
         'PORT':'5432',
     }
 }
