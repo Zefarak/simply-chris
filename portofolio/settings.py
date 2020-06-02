@@ -9,11 +9,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '2n&-eic813_imd6k5a=0m1ir9ps=+686ass+ak5ej-1_0+)6mw'
 DEBUG = True
 
-
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+if not DEBUG:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 '''
@@ -29,7 +29,7 @@ CACHES = {
 }
 '''
 
-ALLOWED_HOSTS = ['simply-chris.com',  ]
+ALLOWED_HOSTS = ['simply-chris.com', '127.0.0.1' ]
 # Application definition
 
 INSTALLED_APPS = [
@@ -115,14 +115,13 @@ DATABASES = {
 
 
 
-'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'mydatabase',
         'USER': 'rootuser',
         'PASSWORD': 'asopos10',
-        'HOST':'161.35.202.137',
+        'HOST':'localhost',
         'PORT':'5432',
     }
 }
@@ -164,11 +163,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-'''
+
 STATIC_URL = '/static/'
 STATIC_FILES_DIRS =[os.path.join(BASE_DIR, 'static'),]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-'''
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -205,7 +204,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
 
 # MAILCHIMP_API_KEY = config('MAILCHIMP_API_KEY')
 # MAILCHIMP_SUBSCRIBE_LIST_ID = config('MAILCHIMP_SUBSCRIBE_LIST_ID')
-'''
+
 # max file size
 MAX_FILE_SIZE = 2*1024*1024
 
@@ -218,7 +217,6 @@ TINYMCE_DEFAULT_CONFIG = {
     'height': 600,
 }
 
-'''
 SENDGRID_API_KEY = config('SENDGRID_API_KEY')
 
 EMAIL_HOST = 'smtp.sendgrid.net'
